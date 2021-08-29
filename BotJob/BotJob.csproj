@@ -36,9 +36,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>BotJob.Program</StartupObject>
-  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Discord.Net.Core">
       <Version>2.0.0-beta</Version>
@@ -267,6 +264,12 @@
     <None Include="Properties\webjob-publish-settings.json" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PodcastPlayerDiscordBot\PodcastPlayerDiscordBot.csproj">
+      <Project>{3130b772-f7df-4549-9e22-24a80328d630}</Project>
+      <Name>PodcastPlayerDiscordBot</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="ffmpeg.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -278,15 +281,6 @@
     <Content Include="opus.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\PodcastPlayerDiscordBot\PodcastPlayerDiscordBot.csproj">
-      <Project>{3130b772-f7df-4549-9e22-24a80328d630}</Project>
-      <Name>PodcastPlayerDiscordBot</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
